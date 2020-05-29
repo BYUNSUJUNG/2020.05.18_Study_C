@@ -10,18 +10,25 @@
 
 void main()
 {
-	int iNum = 0;
-	int iSum = 0;
+	int iNum = 0; // 입력할 숫자 변수
+	int iSum = 0; // 합계를 누적할 변수
 
+	// 입력 받기 전 출력문구 만들기
 	printf("숫자를 입력하세요 : ");
+
+	// 입력받기
 	scanf("%d", &iNum);
 
+	// 1 ~ 입력 받은 값까지 반복
 	for (int i = 1; i <= iNum ; i++)
 	{
+		// 짝수를 판별
 		if (i % 2 == 0) 
 		{
+			// 합계 누적
 			iSum += i;
 		}
 	}
+	// 누적된 값을 출력
 	printf("1~%d까지 짝수의 합은 %d입니다.\n", iNum, iSum);
 }
