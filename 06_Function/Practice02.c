@@ -26,7 +26,7 @@ void main()
 // [정의]
 int SelectLanguage()
 {
-	int iInput; // 사용자 입력 변수
+	int iInput = 0; // 사용자 입력 변수
 	printf("1. C언어\n2. JAVA\n3. PYTHON\n");
 	printf("공부할 언어 코드를 입력하세요 : ");
 	scanf("%d", &iInput);

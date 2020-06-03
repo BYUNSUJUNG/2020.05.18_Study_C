@@ -52,3 +52,13 @@ int div(int iNum1, int iNum2) // 나누기
 {
 	return (iNum1 / iNum2);
 }
+
+/*
+
+return 값 없도록 할 수도 있다
+void div(int iNum1, int iNum2) // 나누기
+{
+	printf("%d / %d = %d\n", iNum1, iNum2, (iNum1/iNum2));
+}
+
+*/

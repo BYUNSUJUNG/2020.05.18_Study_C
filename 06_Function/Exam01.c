@@ -8,7 +8,7 @@ int GetSum(int iNum);
 
 void main()
 {
-	int iInput = 0; 
+	int iInput = 0; // 사용자 입력 변수
 	printf("숫자입력: ");
 	scanf("%d", &iInput);
 	printf("1~%d까지의 합: %d\n", iInput, GetSum(iInput)); 

@@ -10,7 +10,7 @@
 #include <stdio.h>
 
 // [선언]
-int sub(iInput1, iInput2);
+int sub(int iInput1, int iInput2);
 
 void main()
 {
@@ -25,7 +25,7 @@ void main()
 }
 
 // [정의]
-int sub(iInput1, iInput2)
+int sub(int iInput1, int iInput2)
 {
 	if (iInput1 > iInput2)
 	{
@@ -36,6 +36,18 @@ int sub(iInput1, iInput2)
 		return(iInput2 - iInput1);
 	}
 }
+
+
+/* 절댓값을 이용하는 방법
+int iResult = 0;
+iResult = iNum1 -  iNum2;
+
+if(iResult < 0) { // iResult이 음수라면
+	iResult = -iResult;
+} 
+return iResult;
+
+*/
 
 
 
