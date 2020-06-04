@@ -30,7 +30,7 @@ void main()
 	for (i = 1; i <= iNum; i++)
 	{
 		if (IsPrimeNumber(i)==1) { // return 값이 1로 참이면 소수
-			printf("%d", i);
+			printf("%d ", i);
 		}
 	}
 }
@@ -44,7 +44,7 @@ int IsPrimeNumber(int iNum)
 	{
 		if (iNum % i == 0) iCnt++;
 	}
-	if (iCnt == 1) // 소수
+	if (iCnt == 2) // 소수
 	{
 		return 1;
 	}
