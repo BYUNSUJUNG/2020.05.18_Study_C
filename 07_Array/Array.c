@@ -43,7 +43,7 @@ void main()
 	int i = 0;
 		
 	//C, java에서는 인덱스에 음수 값 불가능, 파이션에서는 가능
-	printf("iArry[0] = %d\n", iArr1[0]);
+	printf("iArry[0] = -%d\n", iArr1[0]);
 	printf("iArry[1] = %d\n", iArr1[1]);
 	printf("iArry[2] = %d\n", iArr1[2]);
 	printf("iArry[3] = %d\n", iArr1[3]);

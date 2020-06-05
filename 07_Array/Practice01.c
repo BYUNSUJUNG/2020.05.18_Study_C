@@ -7,6 +7,7 @@ void main()
 	int iArr[] = {1,2,3,4,5,6,7,8,9,10};
 	
 	/////////////////////////////////////////////////////////////
+
 	int iArrLen = sizeof(iArr) / sizeof(iArr[0]); 
 					// 40byte / 4byte => 10 (배열의 길이)
 	int iArrSum = 0; // 배열의 합
