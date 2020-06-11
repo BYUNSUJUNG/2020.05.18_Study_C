@@ -14,11 +14,15 @@ void main()
 
 	int iArrLen = sizeof(iArr) / sizeof(iArr[0]); // 5
 	
+	int iNum = 0;
+
 	// 코드 작성
 	for (i = 0; i < iArrLen; i++) 
 	{
+
 		printf("%d 인덱스의 값을 입력해주세요: ",i);
-		scanf("%d", iArr[i]);
+		scanf("%d", &iNum);
+		iArr[i] = iNum;
 	}
 	
 
@@ -27,14 +31,14 @@ void main()
 }
 
 
-int FindMaxValue( int* pArr, int iArrLen )
+int FindMaxValue( int *pArr, int iArrLen )
 {
 	int iMax = 0;
 	for (int i = 0; i < iArrLen; i++)
 	{
-		if (*pArr[i] > iMax) 
+		if (pArr[i] > iMax) 
 		{
-			iMax = *pArr[i];
+			iMax = pArr[i];
 		}
 	}
 	return iMax;

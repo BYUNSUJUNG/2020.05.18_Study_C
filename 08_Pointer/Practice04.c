@@ -22,26 +22,29 @@ void main()
 {
 	int iArrScore[5] = {0, };
 	int i = 0;
+	int iNum = 0;
 	// 코드 작성
 
 	int iArrLen = sizeof(iArrScore) / sizeof(iArrScore[0]);
 	for (i = 0; i < iArrLen; i++)
 	{
 		printf("점수를 입력해주세요: ");
-		scanf("%d", iArrScore[i]);
+		scanf("%d", &iNum);
+		iArrScore[i] = iNum;
 	}
 	PrintStar(iArrScore, iArrLen);
 
 }
 
-void PrintStar( int* pArr, int iArrLen )
+void PrintStar( int *pArr, int iArrLen )
 {
 	for (int i = 0; i < iArrLen; i++)
 	{
-		printf("(%d)", *pArr[i]);
-		for (int j = 0; j < *pArr[i] / 5; j++) 
+		printf("(%d)", pArr[i]);
+		for (int j = 0; j < pArr[i] / 5; j++) 
 		{
 			printf("*");
 		}
+		printf("\n");
 	}
 }

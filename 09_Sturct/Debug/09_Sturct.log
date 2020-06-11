@@ -1,2 +1,14 @@
-﻿  Exam02.c
+﻿  Practice2.c
+d:\_c수업\studyc\09_sturct\practice2.c(52): warning C4477: 'scanf' : 서식 문자열 '%f'에 'float *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'double *'입니다.
+  d:\_c수업\studyc\09_sturct\practice2.c(52): note: 서식 문자열에서 '%lf'을(를) 사용하는 것이 좋습니다.
+d:\_c수업\studyc\09_sturct\practice2.c(52): warning C4477: 'scanf' : 서식 문자열 '%f'에 'float *' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'double *'입니다.
+  d:\_c수업\studyc\09_sturct\practice2.c(52): note: 서식 문자열에서 '%lf'을(를) 사용하는 것이 좋습니다.
+d:\_c수업\studyc\09_sturct\practice2.c(55): warning C4477: 'scanf' : 서식 문자열 '%f'에 'float *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'double *'입니다.
+  d:\_c수업\studyc\09_sturct\practice2.c(55): note: 서식 문자열에서 '%lf'을(를) 사용하는 것이 좋습니다.
+d:\_c수업\studyc\09_sturct\practice2.c(55): warning C4477: 'scanf' : 서식 문자열 '%f'에 'float *' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'double *'입니다.
+  d:\_c수업\studyc\09_sturct\practice2.c(55): note: 서식 문자열에서 '%lf'을(를) 사용하는 것이 좋습니다.
+d:\_c수업\studyc\09_sturct\practice2.c(52): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 'scanf' 선언을 참조하십시오.
+d:\_c수업\studyc\09_sturct\practice2.c(55): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1274): note: 'scanf' 선언을 참조하십시오.
   09_Sturct.vcxproj -> D:\_C수업\StudyC\09_Sturct\Debug\09_Struct.exe

@@ -7,8 +7,8 @@
 #include <stdio.h>
 
 // 선언
-void Swap(int* pNum1, int* pNum2); // 두 변수의 값을 바꾼다.
-void Sort(int* pNum1, int* pNum2, int* pNum3); 
+void Swap(int *pNum1, int *pNum2); // 두 변수의 값을 바꾼다.
+void Sort(int *pNum1, int *pNum2, int *pNum3); 
 
 void main()
 {
@@ -23,28 +23,21 @@ void main()
 	printf("정렬된 값 : %d, %d, %d\n", iMax, iMid, iMin);
 }
 
-void Swap(int* pNum1, int* pNum2)
+void Swap(int *pNum1, int *pNum2)
 {
-	int temp = pNum1;
-	pNum1 = pNum2;
-	pNum2 = temp;
+	int temp = *pNum1;
+	*pNum1 = *pNum2;
+	*pNum2 = temp;
 }
 
-void Sort(int* pNum1, int* pNum2, int* pNum3)
+void Sort(int *pNum1, int *pNum2, int *pNum3)
 {
-	if (pNum1 > pNum2) 
+	if (*pNum1 < *pNum2)
 	{
-		if (pNum1 > pNum3) 
-		{
-
+		Swap(&(*pNum1), &(*pNum2));
+		if (*pNum2 < *pNum3) {
+			Swap(&(*pNum2), &(*pNum3));
 		}
 	}
-	else if (pNum1 < pNum2) 
-	{
-	}
-	else // pNum1 == pNum2
-	{
-		
-	}
-
+	
 }

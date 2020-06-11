@@ -20,14 +20,17 @@ void main()
 }
 
 
-int CheckLotto( int* iArrLotto, int* iArrMy )
+int CheckLotto( int *iArrLotto, int *iArrMy )
 {
 	int Count = 0;
 	for (int i = 0; i < sizeof(iArrLotto); i++)
 	{
 		for (int j = 0; j < sizeof(iArrMy); j++)
 		{
-
+			if (iArrLotto[i] == iArrMy[j])
+			{
+				Count++;
+			}
 		}
 	}
 	return Count;

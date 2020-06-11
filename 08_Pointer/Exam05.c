@@ -7,13 +7,6 @@
 
 #include <stdio.h>
 
-// [정의]
-void swap(int **ptr1, int **ptr2) // 2중 포인터 매개변수 2개 
-{
-	int temp = **ptr1; 
-	**ptr1 = **ptr2; 
-	**ptr2 = temp; 
-}
 void main()
 {
 	int num1 = 10;
@@ -25,4 +18,12 @@ void main()
 	swap(&p1, &p2);
 	printf("After %d, %d\n", *p1, *p2);		// 20 10
 	printf("num1(%d), num2(%d)\n", num1, num2);	// 10 20 
+}
+
+// [정의]
+void swap(int **ptr1, int **ptr2) // 2중 포인터 매개변수 2개 
+{
+	int temp = **ptr1;
+	**ptr1 = **ptr2;
+	**ptr2 = temp;
 }
