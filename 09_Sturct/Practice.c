@@ -1,10 +1,10 @@
 /*
 	3명의 학생 정보를 입력 받고 출력하기
 		- 학생 정보
-			이름
-			나이
-			전화번호 (문자열 - 숫자아님)
-			과목1 점수
+			이름			(char배열)
+			나이			(int)
+			전화번호 (문자열 - 숫자아님)  (char배열)
+			과목1 점수	(int 배열)
 			과목2 점수
 			과목3 점수
 		- 등급
@@ -33,158 +33,95 @@
 
 #include <stdio.h>
 
-// [선언]
-//int InputStudent();
-//void PrintStudent();
+// 열거형
+enum GRADE { GRADE1=1, GRADE2, GRADE3, GRADE4 };
 
-// 구조체 선언
+// 구조체 생성 
 typedef struct _STUDENT
 {
-	/*
-		이름
-		나이
-		전화번호(문자열 - 숫자아님)
-		과목1 점수
-		과목2 점수
-		과목3 점수
-	*/
+	char szName[20]; // 이름
+	int iAge; // 나이
+	char szPhone[20]; // 폰번호
+	int iScore[3]; // 점수
 
-	char	szName[20];			//  학생 이름 
-	int		iAge;				//  학생 나이 
-	char	szPhoneNumber[20];	//	전화번호
-	// int iGrade[3]
-	int		iGrade1;			//  과목1 점수
-	int		iGrade2;			//  과목2 점수
-	int		iGrade3;			//  과목3 점수
-} STUDENT;
+}STUDENT;
 
-// 열거형 선언
-enum GRADE {
-	GRADE1 = 1, 
-	GRADE2,
-	GRADE3,
-	GRADE4
-}; 
+
+// [선언]
+void InputStudent(STUDENT * pStudent, int iNum);
+void PrintStudent(STUDENT * pStudent, int iNum);
 
 void main()
 {
-	int iGrade = 0;
-	double dAvg = 0;
+	STUDENT sKim[3] = { 0, };
+	int i = 0;
 
-
-	STUDENT st1 = { 0, };
-	for (int i = 0; i < 3; i++)
+	// 입력 받는 for문
+	for (i = 0; i < 3; i++)
 	{
-		printf("---------------------------------------\n");
-		printf("이름: ");
-		scanf("%s", &st1.szName);
-		printf("나이: ");
-		scanf("%d", &st1.iAge);
-		printf("번호: ");
-		scanf("%s", &st1.szPhoneNumber);
-		printf("점수1: ");
-		scanf("%d", &st1.iGrade1);
-		printf("점수2: ");
-		scanf("%d", &st1.iGrade2);
-		printf("점수3: ");
-		scanf("%d", &st1.iGrade3);
+		printf("[%d번 학생 정보 입력]\n", (i + 1));
+		InputStudent(&sKim[i], i);
+	}
 
-		
-		iGrade = st1.iGrade1 + st1.iGrade2 + st1.iGrade3;
-		dAvg = (iGrade / 3.0);
-
-		printf("[%s 학생의 정보]\n", st1.szName);
-		printf("나이: %d\n", st1.iAge);
-		printf("번호: %s\n", st1.szPhoneNumber);
-
-		
-		printf("점수1: %d\n", st1.iGrade1);
-		printf("점수2: %d\n", st1.iGrade2);
-		printf("점수3: %d\n", st1.iGrade3);
-
-		printf("총점: %d\n", iGrade);
-		printf("평균: %.1f\n", dAvg);
-		printf("등급:"); 
-
-		// 평균 점수 90점 이상 1, 80점 이상 2, 70점 이상 3, 나머지 4
-		if (dAvg >= 90)
-		{
-			printf(GRADE1+"등급");	// 1
-		}
-		else if (dAvg >= 80)
-		{
-			printf(GRADE2+"등급"); // 2
-		}
-		else if (dAvg >= 70)
-		{
-			printf(GRADE3+"등급"); // 3
-		}
-		else
-		{
-			printf(GRADE4); // 4
-		}
-
+	// 출력 하는 for문
+	for (i = 0; i < 3; i++)
+	{
+		PrintStudent(sKim, i);
 	}
 }
-
-/*
 // [정의]
 
-//학생 정보 입력 받는 함수
-int InputStudent()
+void InputStudent(STUDENT * pStudent, int iNum)
 {
-	printf("이름: ");
-	scanf("%s", &st1.szName);
-	printf("나이: ");
-	scanf("%d", &st1.iAge);
-	printf("번호: ");
-	scanf("%s", &st1.szPhoneNumber);
-	printf("점수1: ");
-	scanf("%f", &st1.dGrade1);
-	printf("점수2: ");
-	scanf("%f", &st1.dGrade2);
-	printf("점수3: ");
-	scanf("%f", &st1.dGrade3);
-
-	return st1.szName, st1.iAge, st1.szPhoneNumber, st1.dGrade1, st1.dGrade2, st1.dGrade3;
+	// 1. 이름 입력
+	printf("이름 : ");
+	scanf("%s", &pStudent->szName);
+	// 2. 나이 입력 
+	printf("나이 : ");
+	scanf("%d", &pStudent->iAge);
+	// 3. 전화번호 
+	printf("전화번호 : ");
+	scanf("%s", &pStudent->szPhone);
+	// 4. 점수1
+	printf("점수1 : ");
+	scanf("%d", &pStudent->iScore[0]);
+	// 5. 점수2
+	printf("점수2 : ");
+	scanf("%d", &pStudent->iScore[1]);
+	// 6. 점수3
+	printf("점수3 : ");
+	scanf("%d", &pStudent->iScore[2]);
 }
-//학생 정보 출력하는 함수 
-void PrintStudent(char szName, int	iAge, char szPhoneNumber, 
-	double	dGrade1, double	dGrade2, double	dGrade3)
+
+void PrintStudent(STUDENT * pStudent, int iNum)
 {
+	int iTotal = 0; // 총점 누적할 변수 
+	int iAvg = 0; // 평균 점수를 정수형태로 저장하는 변수 
 
-	double dGrade = 0;
-	double dAvg = 0;
+	iTotal += pStudent[iNum].iScore[0] + pStudent[iNum].iScore[1] + pStudent[iNum].iScore[2];
+	printf("이름 : %s\n", pStudent[iNum].szName);
+	printf("나이 : %d세\n", pStudent[iNum].iAge);
+	printf("총점 : %d점\n", iTotal);
+	printf("평균 : %.1f점\n", iTotal / 3.0);
 
-	dGrade = dGrade1 + dGrade2 + dGrade3;
-	dAvg = dGrade / 3.0;
+	iAvg = iTotal / 3;
 
-	printf("[%s 학생의 정보]\n", szName);
-	printf("나이: %d\n",iAge);
-	printf("번호: %s\n", szPhoneNumber);
-
-	printf("총점: %d\n", dGrade);
-	printf("평균: %d\n", dAvg);
-	printf("등급:");
-	
-	// 평균 점수 90점 이상 1, 80점 이상 2, 70점 이상 3, 나머지 4
-	if (dAvg >= 90) 
+	switch (iAvg / 10)
 	{
-		printf(GRADE1);	// 1
-	}
-	else if (dAvg >= 80)
-	{
-		printf(GRADE2); // 2
-	}
-	else if (dAvg >= 70)
-	{
-		printf(GRADE3); // 3
-	}
-	else 
-	{
-		printf(GRADE4); // 4
+	case 10:
+	case 9:
+		printf("%d등급\n", GRADE1);
+		break;
+	case 8:
+		printf("%d등급\n", GRADE2);
+		break;
+	case 7:
+		printf("%d등급\n", GRADE3);
+		break;
+	default:
+		printf("%d등급\n", GRADE4);
 	}
 
 }
 
-*/
+

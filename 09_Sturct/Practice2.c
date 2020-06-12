@@ -17,6 +17,7 @@
 
 #include <stdio.h>
 
+
 typedef struct _FATHER
 {
 	double dHeight;
@@ -45,14 +46,29 @@ void main()
 	MOTHER M = { 0, };
 	STUDENT S = { 0, };
 
+	double f_dH = 0;
+	double f_dW = 0;
+	double m_dH;
+	double m_dW;
+
 	double dHAvg = 0; // 아버지와 어머니의 키 평균
 	double dWAvg = 0; // 아버지와 어머니의 몸무게 평균
 
 	printf("아버지의 키와 몸무게?");
-	scanf("%f %f", &F.dHeight, &F.dWeight);
+	scanf("%f %f", &f_dH, &f_dH);
+
+	printf("%d\n ", f_dH);
+	printf("%d\n ", f_dW);
+	printf("==============");
+	F.dHeight = f_dH;
+	F.dWeight = f_dW;
+	printf("%f\n", F.dHeight);
+	printf("%f\n",F.dWeight);
 
 	printf("어머니의 키와 몸무게?");
-	scanf("%f %f", &M.dHeight, &M.dWeight);
+	scanf("%f %f", &m_dH, &m_dW);
+	M.dHeight = m_dH;
+	M.dWeight = m_dW;
 
 	dHAvg = (F.dHeight + M.dHeight) / 2.0;
 	dWAvg = (F.dWeight + M.dWeight) / 2.0;
